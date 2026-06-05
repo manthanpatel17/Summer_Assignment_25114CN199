@@ -1,30 +1,29 @@
 import java.util.Scanner;
-public class Perfect
-{
-    public static void main(String[] args) 
-    {
-        int n, sum = 0;
-        Scanner s = new Scanner(System.in);
-        System.out.print("Enter the number: ");
-        n = s.nextInt();
-        for(int i = 1; i < n; i++)
-        {
-            if(n % i == 0)
-            {
-                sum = sum + i;
-            }
-        }
-        if(sum == n)
-        {
-            System.out.println("Given number is a perfect number");
-        }
-        else
-        {
-            System.out.println("Given number is not a perfect number");
-        }    
+
+public class Perfectno {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+
+    System.out.println(" enter the number to be checked ");
+    int num = sc.nextInt();
+
+    if (num <= 0) {
+      System.out.println(" invalid entry");
+      sc.close();
+      return;
     }
-    int divisor(int x)
-    {
-       return x;
+
+    int sum = 0;
+    for (int i = 1; i <= num / 2; i++) {
+      if (num % i == 0) {
+        sum = sum + i;
+      }
     }
+    if (sum == num) {
+      System.out.println(num + " is a Perfect number");
+    } else {
+      System.out.println(num + " is not a Perfect number");
+    }
+    sc.close();
+  }
 }
